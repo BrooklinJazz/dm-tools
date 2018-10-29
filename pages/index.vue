@@ -1,23 +1,20 @@
 <template>
   <div>
-    INDEX {{list}}
-    <button @click="init()">GET DATA</button>
-    {{monsters}}
+    <h1>INDEX</h1>
   </div>
 </template>
 
 <script>
-import { mapState, mapMutations, mapActions } from "vuex";
-export default {
-  computed: {
-    ...mapState({
-      monsters: state => state.monsters
-    })
-  },
-  methods: {
-    ...mapActions([
-      'init'
-    ])
-  }
-};
+  import {
+    mapState,
+    mapMutations,
+    mapActions
+  } from "vuex";
+  export default {
+    computed: {
+      ...mapState({
+        monsters: state => state.monsters
+      })
+    }
+  };
 </script>

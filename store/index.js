@@ -11,7 +11,7 @@ export const mutations = {
 }
 
 export const actions = {
-    async init({commit}) {
+    async nuxtServerInit({commit}) {
         const monsters = await axios.get("http://dnd5eapi.co/api/monsters/").then(({data}) => data)
         commit("init", monsters)
     }
