@@ -43,8 +43,15 @@ module.exports = {
   */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    // '~/io'
   ],
+  /*
+  ** Env Variables
+  */
+  env: {
+    WS_URL: process.env.WS_URL || 'http://localhost:3000'
+  },
   /*
   ** Axios module configuration
   */

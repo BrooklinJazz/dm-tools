@@ -162,6 +162,11 @@
 </template>
 
 <script>
+import socket from '~/plugins/socket.io.js'
+socket.on('news', function (data) {
+    console.log("DATA", data);
+    socket.emit('my other event', { my: 'data' });
+  });
   export default {
     data() {
       return {
