@@ -137,13 +137,13 @@
             <v-icon>arrow_drop_down</v-icon>
           </v-btn>
           <v-list>
-            <v-list-tile>
+            <v-list-tile @click="">
               <v-list-tile-title>Sign Out</v-list-tile-title>
             </v-list-tile>
-            <v-list-tile>
+            <v-list-tile @click="">
               <v-list-tile-title>Account Settings</v-list-tile-title>
             </v-list-tile>
-            <v-list-tile>
+            <v-list-tile @click="">
               <v-list-tile-title>Other Apps</v-list-tile-title>
             </v-list-tile>
           </v-list>
