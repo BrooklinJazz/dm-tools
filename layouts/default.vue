@@ -143,7 +143,7 @@
             <v-list-tile @click="">
               <v-list-tile-title>Account Settings</v-list-tile-title>
             </v-list-tile>
-            <v-list-tile @click="">
+            <v-list-tile @click="damageMonster(20)">
               <v-list-tile-title>Other Apps</v-list-tile-title>
             </v-list-tile>
           </v-list>
@@ -162,17 +162,12 @@
 </template>
 
 <script>
-import socket from '~/plugins/socket.io.js'
-socket.on('news', function (data) {
-    console.log("DATA", data);
-    socket.emit('my other event', { my: 'data' });
-  });
-  export default {
-    data() {
-      return {
-        drawer: false,
-        currentYear: new Date().getFullYear()
-      }
-    }
-  }
+export default {
+  data() {
+    return {
+      drawer: false,
+      currentYear: new Date().getFullYear()
+    };
+  },
+};
 </script>
