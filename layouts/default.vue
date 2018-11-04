@@ -120,14 +120,18 @@
     </v-navigation-drawer>
     <v-toolbar app fixed clipped-left>
       <v-toolbar-side-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title>Monster Encounter V2</v-toolbar-title>
+      <v-toolbar-title>
+        <v-btn flat to="/">
+          Dm Tools
+        </v-btn>
+      </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-btn flat>
+        <v-btn flat to="/combat">
           New Encounter
           <v-icon right>add</v-icon>
         </v-btn>
-        <v-btn flat>
+        <v-btn flat to="saves">
           Saves
           <v-icon right>mdi-content-save</v-icon>
         </v-btn>
