@@ -1,10 +1,17 @@
 <template>
-  <div>
-    <h1>COMBAT COMING SOON</h1>
-  </div>
+  <v-container >
+    <v-layout row>
+      <v-flex xs4>
+        <monster-library :monsters="monsters" />
+  
+      </v-flex>
+    </v-layout>
+  
+  </v-container>
 </template>
 
 <script>
+  import MonsterLibrary from "~/components/MonsterLibrary"
   import socket from "~/plugins/socket.io.js";
   import {
     mapState,
@@ -14,8 +21,13 @@
   export default {
     computed: {
       ...mapState({
-        monsters: ({monsters}) => monsters
+        monsters: ({
+          monsters
+        }) => monsters
       })
+    },
+    components: {
+      MonsterLibrary
     }
   };
 </script>
