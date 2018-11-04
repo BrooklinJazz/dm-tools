@@ -15,8 +15,4 @@ export const actions = {
         const monsters = await axios.get("http://dnd5eapi.co/api/monsters/").then(({data}) => data)
         commit("init", monsters)
     },
-    async apiPing() {
-        const ping = await axios.get("/ping")
-        console.log(ping)
-    }
 }

@@ -151,7 +151,6 @@
       </v-toolbar-items>
     </v-toolbar>
     <v-content>
-      <h1 @click="ping">SERVER</h1>
       <v-container>
         <nuxt />
       </v-container>
@@ -163,19 +162,16 @@
 </template>
 
 <script>
-  import { mapActions } from "vuex"
-  import axios from "axios"
+  import {
+    mapActions
+  } from "vuex";
+  import axios from "axios";
   export default {
     data() {
       return {
         drawer: false,
-        currentYear: new Date().getFullYear(),
+        currentYear: new Date().getFullYear()
       };
-    },
-    methods: {
-      ...mapActions({
-        ping: 'apiPing'
-      })
     }
   };
 </script>
