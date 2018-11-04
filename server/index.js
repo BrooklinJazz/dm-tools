@@ -15,10 +15,6 @@ if (config.dev) {
   const builder = new Builder(nuxt)
   builder.build()
 }
-// Ping Test
-app.get('/ping', function (req, res) {
-  res.send('PING!');
-});
 
 // app requests MUST be before nuxt rendering
 app.use(nuxt.render)
