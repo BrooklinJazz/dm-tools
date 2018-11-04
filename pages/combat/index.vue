@@ -1,22 +1,21 @@
 <template>
-<div>
+  <div>
     <h1>COMBAT COMING SOON</h1>
-    <h1 @click="damageMonster(20)">hit {{dmgAmount}}</h1>
-    <input type="text" v-model="dmgAmount" @keyup.enter="damageMonster"/>
-</div>
+  </div>
 </template>
+
 <script>
-import socket from "~/plugins/socket.io.js";
-export default {
-  data() {
-    return {
-      dmgAmount: "20"
-    };
-  },
-  methods: {
-    damageMonster() {
-      socket.emit("DamageMonster", { damage: this.dmgAmount });
+  import socket from "~/plugins/socket.io.js";
+  import {
+    mapState,
+    mapMutations,
+    mapActions
+  } from "vuex";
+  export default {
+    computed: {
+      ...mapState({
+        monsters: ({monsters}) => monsters
+      })
     }
-  }
-};
+  };
 </script>
