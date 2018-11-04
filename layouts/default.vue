@@ -143,7 +143,7 @@
             <v-list-tile @click="">
               <v-list-tile-title>Account Settings</v-list-tile-title>
             </v-list-tile>
-            <v-list-tile @click="damageMonster(20)">
+            <v-list-tile @click="">
               <v-list-tile-title>Other Apps</v-list-tile-title>
             </v-list-tile>
           </v-list>
@@ -151,6 +151,7 @@
       </v-toolbar-items>
     </v-toolbar>
     <v-content>
+      <h1 @click="ping">SERVER</h1>
       <v-container>
         <nuxt />
       </v-container>
@@ -162,12 +163,19 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      drawer: false,
-      currentYear: new Date().getFullYear()
-    };
-  },
-};
+  import { mapActions } from "vuex"
+  import axios from "axios"
+  export default {
+    data() {
+      return {
+        drawer: false,
+        currentYear: new Date().getFullYear(),
+      };
+    },
+    methods: {
+      ...mapActions({
+        ping: 'apiPing'
+      })
+    }
+  };
 </script>
