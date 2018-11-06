@@ -154,8 +154,8 @@
         </v-menu>
       </v-toolbar-items>
     </v-toolbar>
-    <v-content>
-      <v-container>
+    <v-content class="DefaultContent">
+      <v-container fluid class="DefaultContainer">
         <nuxt />
       </v-container>
     </v-content>
@@ -179,3 +179,17 @@
     }
   };
 </script>
+
+<style scoped>
+  /* LIMIT CONTENT TO VUE HEIGHT. */
+  
+  .DefaultContent {
+    height: 100vh;
+    overflow-y: hidden;
+  }
+  
+  .DefaultContainer {
+    height: 100%;
+    overflow-y: hidden;
+  }
+</style>
